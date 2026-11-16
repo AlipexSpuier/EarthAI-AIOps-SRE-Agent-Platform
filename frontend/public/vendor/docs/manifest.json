@@ -1,0 +1,56 @@
+[
+  {
+    "package": "swagger-ui-dist",
+    "version": "5.34.0",
+    "license": "Apache-2.0",
+    "source": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.34.0.tgz",
+    "integrity": "sha512-H6tAIjr3XqE31PbkZl0OFya1ziRLDfTwh3J6OHdumPtPCLfjTnyLeagl/55kFNZcTOz9a9QI9WP0FXldwiGJag==",
+    "files": [
+      {
+        "path": "frontend/public/vendor/docs/swagger-ui/swagger-ui-bundle.js",
+        "bytes": 1684244,
+        "sha256": "3f6abf70480db7e07914df4c98a77385f22ea585eaf457a3e6415ba0eae2d167"
+      },
+      {
+        "path": "frontend/public/vendor/docs/swagger-ui/swagger-ui.css",
+        "bytes": 187576,
+        "sha256": "c3cfe8248c4b0b89673600fb829924eafbac6de4bc4b2b06f5f5243483074d0a"
+      },
+      {
+        "path": "frontend/public/vendor/docs/swagger-ui/LICENSE",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "frontend/public/vendor/docs/swagger-ui/NOTICE",
+        "bytes": 55,
+        "sha256": "0d20d1adef18aee3f40dd258172155521ce702ac445cb5f7b7d60ed32dad2fb2"
+      }
+    ]
+  },
+  {
+    "package": "redoc",
+    "version": "2.5.4",
+    "license": "MIT",
+    "source": "https://registry.npmjs.org/redoc/-/redoc-2.5.4.tgz",
+    "integrity": "sha512-M6jWhG1qoBnH6TFmzJnstyCZ87HmOY/UzDm78mHiYihEdlV/YcS9ogOo1NlElnJMeLsyxHFe2yFc4sNjHTrABQ==",
+    "files": [
+      {
+        "path": "frontend/public/vendor/docs/redoc/redoc.standalone.js",
+        "bytes": 1103463,
+        "sha256": "3903289b29e2f85a60708a92630bb9ad30c33d63ee929ecabf18874260a4d851"
+      },
+      {
+        "path": "frontend/public/vendor/docs/redoc/LICENSE",
+        "bytes": 1091,
+        "sha256": "d3026d549cf68ab7355bcfa85877bf8f845b3334a7efbfdc63936432fb34ff0e"
+      },
+      {
+        "path": "frontend/public/vendor/docs/redoc/logo-mini.svg",
+        "source": "https://cdn.redoc.ly/redoc/logo-mini.svg",
+        "bytes": 539,
+        "sha256": "1dab4315f8de2177b2b2726b29e84a26314c69cd27d692228947c0058793d5a7"
+      }
+    ]
+  }
+]

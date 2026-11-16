@@ -1,0 +1,33 @@
+{
+  "label": "gpt-json-recheck",
+  "started_at": "2026-10-24T14:08:46.009212+00:00",
+  "scope": "Paid configured models; configured SSH host; ONLY server_info and uptime; no infrastructure writes",
+  "results": [
+    {
+      "model": "gpt-5.6",
+      "episode": 1,
+      "requests": 1,
+      "tools": [],
+      "notices": [
+        {
+          "code": "json_action_required"
+        },
+        {
+          "code": "json_action_required"
+        }
+      ],
+      "success": false,
+      "error_code": "text_tool_protocol_error",
+      "diagnostics": {},
+      "error": "模型在两次明确协议请求后仍未返回需要的检查工具；任务未伪判成功",
+      "duration_seconds": 60.72
+    }
+  ],
+  "finished_at": "2026-10-24T14:09:46.733708+00:00",
+  "summary": {
+    "episodes": 1,
+    "succeeded": 0,
+    "model_requests": 1,
+    "verified_ssh_commands": 0
+  }
+}

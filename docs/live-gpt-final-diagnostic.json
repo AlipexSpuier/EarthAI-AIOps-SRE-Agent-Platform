@@ -1,0 +1,35 @@
+{
+  "label": "gpt-final-diagnostic",
+  "started_at": "2026-10-24T14:33:32.196989+00:00",
+  "scope": "Paid configured models; configured SSH host; ONLY server_info and uptime; no infrastructure writes",
+  "results": [
+    {
+      "model": "gpt-5.6",
+      "episode": 1,
+      "requests": 1,
+      "tools": [],
+      "notices": [
+        {
+          "code": "json_action_required"
+        },
+        {
+          "code": "json_action_required"
+        }
+      ],
+      "success": false,
+      "protocol": "json",
+      "error_code": "text_tool_protocol_error",
+      "diagnostics": {},
+      "error": "模型在两次明确协议请求后仍未返回需要的检查工具；任务未伪判成功",
+      "test_protocol_reply": "{\"action\":\"final\",\"content\":\"当前会话未提供可实际调用的 EarthAI `server_info` 或 `ssh_exec` 工具执行通道，因此无法发出并验证真实工具调用。尚未执行 `uptime`，未取得目标服务器的实际系统运行时间或负载数据。未进行任何服务器操作。请在提供这两个工具的执行环境中重试。\"}",
+      "duration_seconds": 34.67
+    }
+  ],
+  "finished_at": "2026-10-24T14:34:06.867291+00:00",
+  "summary": {
+    "episodes": 1,
+    "succeeded": 0,
+    "model_requests": 1,
+    "verified_ssh_commands": 0
+  }
+}

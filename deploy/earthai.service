@@ -1,0 +1,26 @@
+[Unit]
+Description=EarthAI AIOps Platform
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=earthai
+Group=earthai
+WorkingDirectory=/opt/earthai
+EnvironmentFile=-/opt/earthai/.env
+Environment=EARTHAI_DATA_DIR=/var/lib/earthai
+ExecStart=/opt/earthai/.venv/bin/uvicorn backend.main:app --host 0.0.0.0 --port 8000 --workers 1 --proxy-headers --forwarded-allow-ips 127.0.0.1
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=150
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/earthai
+StateDirectory=earthai
+
+[Install]
+WantedBy=multi-user.target

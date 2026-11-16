@@ -1,0 +1,123 @@
+{
+  "ok": true,
+  "at": "2026-10-27T17:33:41.110Z",
+  "checks": [
+    "目录按知识库名称/描述查找，保留当前阅读与库内全文结果，零命中可恢复",
+    "50项目录和长正文/35份文档在桌面、平板及390px均左右或上下独立滚动，不撑成长页",
+    "双角色顶栏问号旁可见使用指南文字，管理员从帮助页集中进入维护",
+    "管理员真实新增/编辑/删除两套指南，对应角色刷新可读且普通用户无管理权限"
+  ],
+  "measurements": [
+    {
+      "label": "1440px技能库",
+      "viewport": 1000,
+      "route": 944,
+      "routeScroll": 944,
+      "left": {
+        "client": 722,
+        "scroll": 3345,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 722,
+        "scroll": 4378,
+        "overflow": "auto"
+      },
+      "width": 1440,
+      "document": 1440
+    },
+    {
+      "label": "1440px知识库",
+      "viewport": 1000,
+      "route": 944,
+      "routeScroll": 944,
+      "left": {
+        "client": 608,
+        "scroll": 3400,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 608,
+        "scroll": 2811,
+        "overflow": "auto"
+      },
+      "width": 1440,
+      "document": 1440
+    },
+    {
+      "label": "1024px知识库",
+      "viewport": 768,
+      "route": 712,
+      "routeScroll": 712,
+      "left": {
+        "client": 377,
+        "scroll": 3400,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 377,
+        "scroll": 2789,
+        "overflow": "auto"
+      },
+      "width": 1024,
+      "document": 1024
+    },
+    {
+      "label": "1024px技能库",
+      "viewport": 768,
+      "route": 712,
+      "routeScroll": 712,
+      "left": {
+        "client": 491,
+        "scroll": 3345,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 491,
+        "scroll": 4371,
+        "overflow": "auto"
+      },
+      "width": 1024,
+      "document": 1024
+    },
+    {
+      "label": "390px知识库",
+      "viewport": 844,
+      "route": 787,
+      "routeScroll": 787,
+      "left": {
+        "client": 119,
+        "scroll": 2909,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 223,
+        "scroll": 2661,
+        "overflow": "auto"
+      },
+      "width": 390,
+      "document": 390
+    },
+    {
+      "label": "390px技能库",
+      "viewport": 844,
+      "route": 787,
+      "routeScroll": 787,
+      "left": {
+        "client": 139,
+        "scroll": 3029,
+        "overflow": "auto"
+      },
+      "right": {
+        "client": 360,
+        "scroll": 4360,
+        "overflow": "auto"
+      },
+      "width": 390,
+      "document": 390
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "scope": "isolated user/admin and local data; all external browser requests blocked; no model or infrastructure calls"
+}

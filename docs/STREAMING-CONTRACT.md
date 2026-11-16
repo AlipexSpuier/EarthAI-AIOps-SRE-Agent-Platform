@@ -1,0 +1,19 @@
+# EarthAI streaming execution events
+
+Keep default SSE message with numeric event ID, run_id/type/data/created_at, all persisted. Existing event types remain compatible. New fields/events:
+
+- `model_start`: `{message_id:string,turn:number,model:string}` immediately before model HTTP request.
+- `assistant_delta`: `{message_id:string,turn:number,delta:string,reset?:boolean}`. Incremental PUBLIC reply text only, not hidden reasoning. If reset true replace prior text with delta. May arrive before model completes. Must dedup by event ID. Subsequent `assistant` with same message_id is authoritative final text (do NOT append twice). Old assistant events without message_id still valid.
+- `assistant`: `{message_id?,turn?,content:string,status?:'completed'|'interrupted'}` final accumulated PUBLIC reply; may finalize partial response on cancellation or provider error; not automatically proof of task completion.
+- `model_end`: `{message_id,turn,finish_reason?,streamed?,duration_ms?,usage?:object}` finishes a model generation, not the run. Only safe usage/finish metadata, never raw provider messages or reasoning contents.
+- `notice`: `{message:string,code?:string,turn?,message_id?}` truthful nonfatal recovery note e.g. actual fallback or empty retry; never imply tool ran.
+- `tool_start`: existing `{tool_call_id,name,arguments,risk}`, plus `{step_index:number,turn:number,target:{name,kind,host?},reason:string}`. Means preparing/gating; not necessarily executed.
+- `tool_execution`: `{tool_call_id,name,step_index,turn,phase:'running'}` emitted AFTER risk approval, immediately before real tool dispatch. Pending approvals must be distinguished from execution.
+- `tool_output`: `{tool_call_id,name,step_index,turn,stream:'stdout'|'stderr'|'progress',content:string,reset?:boolean}`. Incremental SSH output or truthful limited progress. Dedup event IDs, append per call/stream; reset replaces. No fake repeated animation on completed content.
+- `tool_result`: existing fields plus `{step_index,turn,duration_ms,executed:boolean,outcome:'succeeded'|'failed'|'blocked'}`. `ok` false when command exit!=0/errors/refusal; executed false for approval/read-only block; output includes actual stdout/stderr/exitcode etc.
+- `plan`: `{steps:string[],turn?}` intention only. Do not mark all planned steps completed merely because run has finished. Actual tool records authoritative.
+- `approval`: existing object plus `tool_call_id?` to correlate; backend may emit tool_call_id on event only (DB schema unchanged).
+
+UI should use chronological timeline, not regroup all tool calls above all messages. Aggregate model_start/deltas/assistant into a message placed at the first start, show partial as it arrives; aggregate tool_start/execution/output/result into tool step at original start. Show generation status even no body yet, runtime actual actions, target, reason, exact command/action/resource, args and output visible by default (bounded pre inside disclosure optional for long content), actual exit/time/risk, pending approval distinctly; preserve old event rendering. Include notices and no raw hidden chain-of-thought. Stop/approval functional, context remains outside routes, refresh recovery should not duplicate text.
+
+Model adapter API for backend/model_client.py: `async complete(provider:dict,model:str,messages:list[dict],*,on_event:Callable[[str,dict],None]|None=None)->dict`. Provider secrets use tools.secret_values/unseal. on_event receives `('content',{'content':cumulative_public_text})`, `('metadata',{'finish_reason':...,'usage':...,'streamed':...})`, `('notice',{'message':...,'code':...})`. Engine assigns message_id/turn, redacts incrementally and emits above events. Return ONLY valid chat message {role,content,tool_calls?}; metadata via callback. Do not expose reasoning text. Keep tool specs and model client server errors actionable, do not blanket blame tool support.

@@ -1,0 +1,30 @@
+{
+  "name": "earthai-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "lint": "tsc -b --pretty false",
+    "test": "node --test tests/frontend.test.mjs tests/streaming-ui.test.mjs tests/chat-preferences.test.mjs tests/markdown-content.test.mjs tests/request-dedup.test.mjs tests/control-grants-ui.test.mjs tests/team-spaces-ui.test.mjs",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "lucide-react": "0.511.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-markdown": "10.1.0",
+    "react-router-dom": "7.6.2",
+    "remark-gfm": "4.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.6",
+    "@types/react-dom": "19.1.6",
+    "@vitejs/plugin-react": "4.5.1",
+    "esbuild": "0.25.12",
+    "jsdom": "26.1.0",
+    "typescript": "5.8.3",
+    "vite": "6.3.5"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-24T14:40:02.734499+00:00",
+  "scope": "full engine, user authorized paid model and configured host, observe level, uptime only",
+  "results": [
+    {
+      "model": "gemini-3.1-pro-preview-all",
+      "run_id": "cae7413e-87e6-4165-b926-cf6bbe21e2f7",
+      "conversation_id": "ebe13941-a9b1-4a77-a1a1-0207080b29a5",
+      "status": "completed",
+      "step_count": 3,
+      "error": "",
+      "tools": [
+        {
+          "name": "server_info",
+          "ok": true,
+          "executed": true,
+          "outcome": "succeeded",
+          "exit_code": null
+        },
+        {
+          "name": "ssh_exec",
+          "ok": true,
+          "executed": true,
+          "outcome": "succeeded",
+          "exit_code": 0
+        }
+      ],
+      "notices": [
+        "empty_response_retry",
+        "request_retry",
+        "request_retry",
+        "request_retry",
+        "tool_protocol_fallback"
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "run_id": "5641ea14-bcc1-469c-baf1-bb39b38bfa53",
+      "conversation_id": "69236321-a051-47b4-ac9d-eac4742b4464",
+      "status": "cancelled",
+      "step_count": 2,
+      "error": "",
+      "tools": [],
+      "notices": [
+        "request_retry",
+        "action_requires_evidence"
+      ]
+    }
+  ]
+}

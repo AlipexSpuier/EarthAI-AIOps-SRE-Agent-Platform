@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "at": "2026-10-24T15:30:31.396Z",
+  "checks": [
+    "六项聊天配置立即保存到服务端，新会话与刷新完整恢复",
+    "退出账号并关闭浏览器上下文后任务未取消，重新登录可恢复进度及执行结果",
+    "关闭并重建浏览器会话后可自动订阅原任务，三个工具结果完整恢复"
+  ],
+  "scope": "isolated account/SQLite/local model fixture; no production infrastructure"
+}

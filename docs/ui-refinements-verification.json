@@ -1,0 +1,317 @@
+{
+  "ok": true,
+  "at": "2026-10-27T17:29:30.547Z",
+  "checks": [
+    "登录/注册保留单个可用密码按钮，输入框无彩色描边且原阴影保留",
+    "管理员11个帮助章节独立URL、单节DOM、刷新/历史/搜索/移动端通过",
+    "管理员新增供应商无需模型，仅一次目录同步并默认首模型；失败配置保留可重试",
+    "普通用户12个帮助章节独立URL、单节DOM、刷新/历史/搜索/移动端通过",
+    "普通用户新增供应商无需默认模型，自动同步首模型与空目录提示通过"
+  ],
+  "styles": [
+    {
+      "label": "登录账号",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "登录密码",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "登录账号",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "登录密码",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "注册账号",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "注册密码",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "注册账号",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "注册密码",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员帮助搜索",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(228, 233, 225)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员列表搜索",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(228, 233, 225)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员表单名称",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "管理员角色选择器",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(228, 233, 225)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "color(srgb 0.0313726 0.498039 0.411765 / 0.12) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员帮助搜索",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(40, 56, 46)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员列表搜索",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(40, 56, 46)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "管理员表单名称",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "管理员角色选择器",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(40, 56, 46)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "color(srgb 0.337255 0.776471 0.627451 / 0.12) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "用户帮助搜索",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(228, 233, 225)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "用户供应商搜索",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(37, 60, 52)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(228, 233, 225)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "用户供应商表单",
+      "theme": "light",
+      "focused": {
+        "border": "rgb(212, 221, 211)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    },
+    {
+      "label": "用户帮助搜索",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(40, 56, 46)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "用户供应商搜索",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(227, 237, 229)",
+        "width": "0px",
+        "outline": "none",
+        "shadow": "none"
+      },
+      "surrounding": {
+        "border": "rgb(40, 56, 46)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.063) 0px 0px 0px 3px"
+      }
+    },
+    {
+      "label": "用户供应商表单",
+      "theme": "dark",
+      "focused": {
+        "border": "rgb(59, 80, 66)",
+        "width": "1px",
+        "outline": "none",
+        "shadow": "rgba(55, 157, 121, 0.082) 0px 0px 0px 3px"
+      },
+      "surrounding": null
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "scope": "isolated account and local catalog fixture; no paid model or SSH requests",
+  "passwordNativeRevealRule": true
+}

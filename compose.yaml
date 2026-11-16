@@ -1,0 +1,25 @@
+services:
+  earthai:
+    image: earthai:latest
+    build: .
+    user: "0:0"
+    ports:
+      - "0.0.0.0:8000:8000"
+    environment:
+      EARTHAI_DATA_DIR: /app/data
+      EARTHAI_SQLITE_JOURNAL_MODE: DELETE
+      EARTHAI_COOKIE_SECURE: ${EARTHAI_COOKIE_SECURE:-false}
+      EARTHAI_ALLOW_REGISTRATION: ${EARTHAI_ALLOW_REGISTRATION:-true}
+      EARTHAI_ALLOWED_ORIGINS: ${EARTHAI_ALLOWED_ORIGINS:-http://localhost:8000}
+      EARTHAI_MASTER_KEY: ${EARTHAI_MASTER_KEY:-}
+    # The deployment platform must attach the existing NAS at /app/data.
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 150s
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - DAC_OVERRIDE
+      - FOWNER

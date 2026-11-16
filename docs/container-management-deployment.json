@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "container": "earthai-earthai-1",
+  "image": "earthai-earthai:management-20261027",
+  "volume_preserved": true,
+  "ports_preserved": true,
+  "environment_preserved": true,
+  "data_digest_unchanged": true,
+  "users": 1,
+  "entities": {
+    "agents": 10,
+    "knowledge": 10,
+    "servers": 1,
+    "skills": 10
+  },
+  "runs": 0,
+  "messages": 0,
+  "documents": 20,
+  "health": "healthy",
+  "output": ""
+}

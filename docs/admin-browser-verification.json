@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "at": "2026-10-27T16:46:44.976Z",
+  "checks": [
+    "admin/admin真实登录、强制改密、11项专属导航和聊天深链接隔离通过",
+    "用户管理真实创建普通账号并自动继承50套默认能力",
+    "智能体、模型及模型行、服务器、项目、关闭的定时任务真实表单保存通过",
+    "默认技能批量勾选、计数、修改与全员同步通过",
+    "默认知识库、全文文档、Markdown表格对齐与代码复制结构通过",
+    "界面名称副标题字号颜色、本地图标/favicon与管理员详细可搜索帮助通过",
+    "普通用户7类默认只读且可阅读使用、12模块帮助、390px双角色布局通过",
+    "管理员可处理全员告警且结果同步所属用户"
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "scope": "isolated service and accounts; all public requests blocked; no model/SSH calls",
+  "initialCatalog": {
+    "agents": 50,
+    "knowledge": 50,
+    "skills": 50,
+    "users": 1,
+    "admins": 1,
+    "alerts": 0,
+    "runs": 0,
+    "active_runs": 0
+  }
+}

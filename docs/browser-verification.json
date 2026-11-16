@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "checked_at": "2026-10-24T12:02:45.800Z",
+  "checks": [
+    "真实浏览器注册登录与工作空间加载",
+    "1440px 桌面无水平溢出",
+    "供应商 URL/API Key 表单保存与真实 HTTP 连接测试",
+    "真实后台四轮 Agent + 三次工具调用，切换概览页面不断连",
+    "浏览器刷新后恢复会话与持久化执行记录",
+    "Agent 生成真实 Markdown 文件，可鉴权下载",
+    "全部管理路由连接真实后端且无运行时错误",
+    "头像标识与主题真实持久化",
+    "390px 移动端无水平溢出",
+    "移动端侧栏导航与概览排版",
+    "浏览器零 JavaScript 运行时异常"
+  ],
+  "errors": [],
+  "environment": "Headless Chromium, isolated SQLite, real HTTP local provider fixture; no production credentials"
+}

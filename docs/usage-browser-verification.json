@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "at": "2026-10-28T04:16:12.667Z",
+  "checks": [
+    "真实任务按选定智能体、注入技能、命中知识库各登记1次且有统计起点",
+    "管理员三类单资源卡片与概览三块总次数在桌面和390px真实显示",
+    "页面打开、刷新与手动搜索不会增加任务调用次数"
+  ],
+  "totals": {
+    "agents": 1,
+    "knowledge": 1,
+    "skills": 1
+  },
+  "started_at": "2026-10-28T04:14:42.686679+00:00",
+  "errors": [],
+  "externalRequests": [],
+  "scope": "isolated data and local fixture completion; no production model or infrastructure calls"
+}

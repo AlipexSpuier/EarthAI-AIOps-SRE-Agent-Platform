@@ -1,0 +1,36 @@
+.control-permission-disabled.agent-card,
+.control-permission-disabled.schedule-card {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--surface-soft) 65%, var(--surface));
+}
+
+.control-permission-disabled .agent-avatar,
+.control-permission-disabled .schedule-card-aside {
+  filter: grayscale(1);
+  opacity: .65;
+}
+
+.control-permission-note {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+button.control-permission-disabled,
+fieldset.control-permission-disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+fieldset.control-permission-switch {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+fieldset.control-permission-switch:disabled .switch-label,
+fieldset.control-permission-switch:disabled .switch-track {
+  cursor: not-allowed;
+}

@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-24T15:10:41.891115+00:00",
+  "scope": "full engine, user authorized paid model and configured host, observe level, uptime only",
+  "results": [
+    {
+      "model": "gemini-3.1-pro-preview-all",
+      "run_id": "3549735d-b648-41a8-8f9c-f0926dbf3872",
+      "conversation_id": "70ed8d46-323a-4563-a51e-63ef515558ab",
+      "status": "completed",
+      "step_count": 2,
+      "error": "",
+      "tools": [
+        {
+          "name": "ssh_exec",
+          "ok": true,
+          "executed": true,
+          "outcome": "succeeded",
+          "exit_code": 0
+        }
+      ],
+      "notices": [
+        "verified_protocol_selected"
+      ]
+    },
+    {
+      "model": "gpt-5.6",
+      "run_id": "cd4ce75c-b51b-450b-96c8-e677df95e270",
+      "conversation_id": "3cab5622-999d-45b4-b7b4-7a249f48d8d1",
+      "status": "completed",
+      "step_count": 2,
+      "error": "",
+      "tools": [
+        {
+          "name": "ssh_exec",
+          "ok": true,
+          "executed": true,
+          "outcome": "succeeded",
+          "exit_code": 0
+        }
+      ],
+      "notices": [
+        "verified_protocol_selected"
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "run_id": "1ce147c6-3792-4b63-81cc-b1b991dd046b",
+      "conversation_id": "e4c8dec6-3e98-4bba-9fea-d305cb268667",
+      "status": "cancelled",
+      "step_count": 2,
+      "error": "",
+      "tools": [
+        {
+          "name": "ssh_exec",
+          "ok": true,
+          "executed": true,
+          "outcome": "succeeded",
+          "exit_code": 0
+        }
+      ],
+      "notices": [
+        "verified_protocol_selected"
+      ]
+    }
+  ]
+}

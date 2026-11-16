@@ -1,0 +1,144 @@
+.overview-audit {
+  min-width: 0;
+}
+
+.overview-audit-filters {
+  margin: 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.overview-audit-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+  min-width: 0;
+}
+
+.overview-audit-range {
+  flex: 1 1 160px;
+  min-width: 0;
+  max-width: 220px;
+}
+
+.overview-audit-date {
+  flex: 1 1 205px;
+  min-width: 0;
+}
+
+.overview-audit .ea-select,
+.overview-audit input {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.overview-audit input {
+  font-size: 12px;
+}
+
+.overview-audit-hint,
+.overview-audit-summary {
+  color: var(--muted-strong);
+  font-size: 10px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.overview-audit-hint {
+  margin-top: 10px;
+}
+
+.overview-audit-summary {
+  margin: 12px 22px;
+}
+
+.overview-audit-filters .inline-error {
+  margin-top: 10px;
+}
+
+.overview-audit-results .loading-state {
+  min-height: 140px;
+  padding: 30px 18px;
+}
+
+.overview-audit-results .error-state {
+  flex-wrap: wrap;
+  margin: 0 22px 20px;
+}
+
+.overview-audit-results .error-state > div {
+  min-width: 0;
+}
+
+.overview-audit .audit-item {
+  display: grid;
+  grid-template-columns: 6px minmax(0, 1fr) auto;
+  column-gap: 12px;
+}
+
+.overview-audit .audit-item strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+
+.overview-audit .audit-item p {
+  white-space: pre-wrap;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.overview-audit .audit-item .overview-audit-resource {
+  color: var(--muted-strong);
+}
+
+.overview-audit .audit-item time {
+  font-size: 9px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .overview-audit-filters {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .overview-audit-summary {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .overview-audit-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .overview-audit-range {
+    max-width: none;
+  }
+
+  .overview-audit-toolbar > .button {
+    justify-self: start;
+  }
+
+  .overview-audit .audit-item {
+    grid-template-columns: 6px minmax(0, 1fr);
+    row-gap: 4px;
+  }
+
+  .overview-audit .audit-item time {
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .overview-audit-results .error-state {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+}

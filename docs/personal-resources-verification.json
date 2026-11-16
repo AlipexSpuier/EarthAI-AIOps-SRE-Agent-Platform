@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "at": "2026-10-28T07:22:43.107Z",
+  "checks": [
+    "真实默认和自建本地任务均进入三类全量统计",
+    "默认远程鼠标、键盘、修饰键、中键与私人远程逐次计数；默认远程无写入口",
+    "三类默认本地资源可个人编辑，知识文档可上传，删除及模板再同步不复活且不影响其他账户",
+    "桌面及390px供应商徽标间距、管理员全量按钮排序持久化和无数字排序输入通过"
+  ],
+  "totals": {
+    "agents": 7,
+    "knowledge": 2,
+    "skills": 2
+  },
+  "pageErrors": [],
+  "externalRequests": [],
+  "scope": "isolated local fixture completion and intercepted same-origin remote target; no paid model, production infrastructure or NAS calls"
+}

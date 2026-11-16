@@ -1,0 +1,125 @@
+{
+  "ok": true,
+  "image": "earthai:latest",
+  "image_id": "sha256:ef389add195b19235940607efdd042949e90a0ae42ebbc06be735ae936171d63",
+  "image_created_at": "2026-10-29T12:00:37.806297195+08:00",
+  "network": "none",
+  "container_smoke": {
+    "uid": 0,
+    "accounts": [
+      "root"
+    ],
+    "groups": [
+      "root"
+    ],
+    "fonts": 103,
+    "defaults_per_kind": {
+      "agents": 50,
+      "knowledge": 50,
+      "skills": 100
+    },
+    "knowledge_document_count": 367,
+    "knowledge_document_counts": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "initial_admin": true,
+    "forced_password_change": true,
+    "health": "ok"
+  },
+  "single_nas_storage_smoke": {
+    "ok": true,
+    "create_container": {
+      "ok": true,
+      "phase": "create",
+      "fixture": {
+        "admin_id": "744159ce-ed79-4fb6-9d14-a9b63d1cf407",
+        "owner_id": "6daf3158-0049-45e2-a201-5316c9d05088",
+        "member_id": "b4637650-440c-4197-9d76-722b94a9b7ee",
+        "space_id": "7f61f7a6-e0a4-4f56-8d90-1f625dd41733",
+        "personal_file_id": "02a109db-7a5f-4aeb-af5a-e4970708c631",
+        "team_file_id": "e24c1318-b0b6-4731-b76c-bda1a0c326a2"
+      },
+      "single_mount": true,
+      "all_data_at": "/app/data",
+      "journal_mode": "DELETE",
+      "synchronous": "FULL",
+      "usage_totals_with_remote_clicks": {
+        "agents": 3,
+        "knowledge": 1,
+        "skills": 1
+      },
+      "personal_states_preserved": true,
+      "team_module_persistence": true,
+      "team_archive_preserved": true,
+      "team_restored_after_recreation": false,
+      "invitation_auto_enable": true,
+      "explicit_team_disable_blocks_invites": true,
+      "admin_governance_without_modules": true,
+      "owner_account_protected": true,
+      "original_file_ids_and_bytes_preserved": true,
+      "real_nas_measured": false
+    },
+    "recreated_container": {
+      "ok": true,
+      "phase": "reopen",
+      "fixture": {
+        "admin_id": "744159ce-ed79-4fb6-9d14-a9b63d1cf407",
+        "owner_id": "6daf3158-0049-45e2-a201-5316c9d05088",
+        "member_id": "b4637650-440c-4197-9d76-722b94a9b7ee",
+        "space_id": "7f61f7a6-e0a4-4f56-8d90-1f625dd41733",
+        "personal_file_id": "02a109db-7a5f-4aeb-af5a-e4970708c631",
+        "team_file_id": "e24c1318-b0b6-4731-b76c-bda1a0c326a2"
+      },
+      "single_mount": true,
+      "all_data_at": "/app/data",
+      "journal_mode": "DELETE",
+      "synchronous": "FULL",
+      "usage_totals_with_remote_clicks": {
+        "agents": 3,
+        "knowledge": 1,
+        "skills": 1
+      },
+      "personal_states_preserved": true,
+      "team_module_persistence": true,
+      "team_archive_preserved": false,
+      "team_restored_after_recreation": true,
+      "invitation_auto_enable": true,
+      "explicit_team_disable_blocks_invites": true,
+      "admin_governance_without_modules": true,
+      "owner_account_protected": true,
+      "original_file_ids_and_bytes_preserved": true,
+      "real_nas_measured": false
+    },
+    "original_key_preserved": true,
+    "separate_container_recreation": true,
+    "only_one_bind_mount": true,
+    "real_nas_measured": false
+  },
+  "compose_user": "0:0",
+  "ports": [
+    "0.0.0.0:8000:8000"
+  ],
+  "privileged": false,
+  "privileged_field_present": false,
+  "cap_drop": [
+    "ALL"
+  ],
+  "cap_add": [
+    "DAC_OVERRIDE",
+    "FOWNER"
+  ],
+  "compose_defines_data_mount": false,
+  "data_mount_managed_by": "deployment_platform",
+  "user_data_volumes_used": false,
+  "temporary_test_bind_used": true,
+  "app_bind": "0.0.0.0"
+}

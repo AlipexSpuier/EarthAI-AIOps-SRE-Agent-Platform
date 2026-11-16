@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-24T14:58:14.595017+00:00",
+  "results": [
+    {
+      "iteration": 1,
+      "called": "ssh_exec",
+      "exit_code": 0,
+      "stdout_chars": 62
+    },
+    {
+      "iteration": 2,
+      "called": "ssh_exec",
+      "exit_code": 0,
+      "stdout_chars": 62
+    }
+  ]
+}

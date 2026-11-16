@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "scope": "read-only public production endpoints, no account changes",
+  "base_url": "http://127.0.0.1:8000",
+  "health": {
+    "status": "ok",
+    "version": "1.0.0",
+    "database": "ok"
+  },
+  "agent_reorder_api": true,
+  "audit_range_api": true,
+  "assets": {
+    "/favicon.ico": {
+      "ok": true,
+      "content_type": "image/vnd.microsoft.icon",
+      "bytes": 7514
+    },
+    "/favicon-32.png": {
+      "ok": true,
+      "content_type": "image/png",
+      "bytes": 2253
+    },
+    "/apple-touch-icon.png": {
+      "ok": true,
+      "content_type": "image/png",
+      "bytes": 36603
+    },
+    "/icon-192.png": {
+      "ok": true,
+      "content_type": "image/png",
+      "bytes": 40924
+    },
+    "/icon-512.png": {
+      "ok": true,
+      "content_type": "image/png",
+      "bytes": 260489
+    }
+  },
+  "latest_frontend": true,
+  "manifest": true
+}

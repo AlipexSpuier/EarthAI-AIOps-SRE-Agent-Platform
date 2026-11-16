@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "at": "2026-10-27T17:29:46.533Z",
+  "scope": "isolated account; all non-origin requests blocked; no production data or model/SSH calls",
+  "checks": [
+    "阻断全部外部网络后，登录注册及12个管理路由正常加载",
+    "中英文字体及中间字重均从站内 WOFF2 实际加载",
+    "Swagger 文档从本地脚本、样式和OpenAPI正常渲染，无外部验证器请求",
+    "ReDoc 文档从本地脚本和OpenAPI正常渲染，不请求Google字体",
+    "390px移动端同样可加载且无横向溢出"
+  ],
+  "externalRequests": [],
+  "failedAssets": [],
+  "pageErrors": [],
+  "localFontFilesRequested": [
+    "/fonts/font-002.woff2",
+    "/fonts/font-099.woff2",
+    "/fonts/font-098.woff2",
+    "/fonts/font-097.woff2",
+    "/fonts/font-096.woff2",
+    "/fonts/font-090.woff2",
+    "/fonts/font-094.woff2",
+    "/fonts/font-093.woff2",
+    "/fonts/font-091.woff2",
+    "/fonts/font-095.woff2",
+    "/fonts/font-088.woff2",
+    "/fonts/font-083.woff2",
+    "/fonts/font-089.woff2",
+    "/fonts/font-092.woff2",
+    "/fonts/font-075.woff2",
+    "/fonts/font-087.woff2",
+    "/fonts/font-086.woff2",
+    "/fonts/font-084.woff2",
+    "/fonts/font-081.woff2",
+    "/fonts/font-031.woff2"
+  ],
+  "docsScriptsRequested": [
+    "/vendor/docs/swagger-ui/swagger-ui.css",
+    "/vendor/docs/swagger-ui/swagger-ui-bundle.js",
+    "/vendor/docs/redoc/redoc.standalone.js",
+    "/vendor/docs/redoc/logo-mini.svg"
+  ]
+}

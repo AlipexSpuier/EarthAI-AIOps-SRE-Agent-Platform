@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "scope": "isolated TestClient, 50 knowledge bases / 100 documents; equivalent previous per-item counter vs current API; simulated SELECT latency only, not real NAS measurements",
+  "simulated_select_delay_ms": 5.0,
+  "previous_equivalent": {
+    "samples": [
+      {
+        "checkouts": 52,
+        "statements": 52,
+        "elapsed_ms": 287.16
+      },
+      {
+        "checkouts": 52,
+        "statements": 52,
+        "elapsed_ms": 287.4
+      },
+      {
+        "checkouts": 52,
+        "statements": 52,
+        "elapsed_ms": 285.26
+      }
+    ],
+    "median_ms": 287.16
+  },
+  "optimized_api": {
+    "samples": [
+      {
+        "checkouts": 3,
+        "statements": 3,
+        "elapsed_ms": 21.37
+      },
+      {
+        "checkouts": 3,
+        "statements": 3,
+        "elapsed_ms": 20.11
+      },
+      {
+        "checkouts": 3,
+        "statements": 3,
+        "elapsed_ms": 20.01
+      }
+    ],
+    "median_ms": 20.11
+  },
+  "pooled_connections_created_for_20_reads": 1,
+  "unchanged_startup_sync_statements": [
+    "SELECT id,updated_at FROM default_templates ORDER BY id",
+    "SELECT u.id,coalesce(json_extract(u.data,'$.role'),'user') role,s.sync_revision\n        FROM users u LEFT JOIN default_sync_revisions s ON s.owner=u.id ORDER BY u.id",
+    "SELECT value FROM platform_settings WHERE key='default_sync_signature_v1'"
+  ],
+  "unchanged_startup_sync_write_count": 0
+}

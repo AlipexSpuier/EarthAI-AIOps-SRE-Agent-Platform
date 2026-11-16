@@ -1,0 +1,98 @@
+{
+  "label": "baseline",
+  "started_at": "2026-10-24T13:06:54.062564+00:00",
+  "scope": "Paid configured models; configured SSH host; ONLY server_info and uptime; no infrastructure writes",
+  "results": [
+    {
+      "model": "gemini-3.1-pro-preview-all",
+      "episode": 1,
+      "requests": 2,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        }
+      ],
+      "notices": [],
+      "success": false,
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 0,
+          "tool_count": 1,
+          "reasoning_present": true,
+          "request_attempt": 1
+        }
+      ],
+      "error_code": "http_error",
+      "diagnostics": {
+        "http_status": 500,
+        "finish_reason": null,
+        "streamed": false,
+        "usage": {},
+        "response_keys": [],
+        "message_keys": [],
+        "content_length": 0,
+        "tool_count": 0,
+        "reasoning_present": false,
+        "reasoning_length": 0,
+        "refusal_present": false,
+        "done": false,
+        "request_attempt": 1,
+        "retry_reason": {}
+      },
+      "error": "模型供应商返回 HTTP 500；请检查鉴权、配额及 API 配置。",
+      "duration_seconds": 10.07
+    },
+    {
+      "model": "gpt-5.6",
+      "episode": 1,
+      "requests": 1,
+      "tools": [],
+      "notices": [],
+      "success": false,
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 87,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        }
+      ],
+      "error_code": "no_verified_command",
+      "duration_seconds": 23.54
+    },
+    {
+      "model": "claude-opus-4-8",
+      "episode": 1,
+      "requests": 1,
+      "tools": [],
+      "notices": [],
+      "success": false,
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 183,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        }
+      ],
+      "error_code": "no_verified_command",
+      "duration_seconds": 12.89
+    }
+  ],
+  "finished_at": "2026-10-24T13:07:40.558410+00:00",
+  "summary": {
+    "episodes": 3,
+    "succeeded": 0,
+    "model_requests": 4,
+    "verified_ssh_commands": 0
+  }
+}

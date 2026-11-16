@@ -1,0 +1,63 @@
+{
+  "label": "gpt-planner",
+  "started_at": "2026-10-24T14:44:29.403545+00:00",
+  "scope": "Paid configured models; configured SSH host; ONLY server_info and uptime; no infrastructure writes",
+  "results": [
+    {
+      "model": "gpt-5.6",
+      "episode": 1,
+      "requests": 3,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        },
+        {
+          "name": "ssh_exec",
+          "exit_code": 0,
+          "selected": null,
+          "output_chars": 62
+        }
+      ],
+      "notices": [],
+      "success": true,
+      "protocol": "json",
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 134,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 210,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 189,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        }
+      ],
+      "duration_seconds": 49.79
+    }
+  ],
+  "finished_at": "2026-10-24T14:45:19.198299+00:00",
+  "summary": {
+    "episodes": 1,
+    "succeeded": 1,
+    "model_requests": 3,
+    "verified_ssh_commands": 1
+  }
+}

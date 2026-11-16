@@ -1,0 +1,15 @@
+{
+  "ok": true,
+  "at": "2026-10-24T14:36:43.843Z",
+  "checks": [
+    "真实 SSE 正文在模型生成结束前已到达浏览器，逐步工具执行在切页后持续",
+    "刷新恢复无重复文字，按时间展示计划、实际参数、执行输出与报告",
+    "空响应仅重试当前模型请求，恢复后没有重复执行工具",
+    "模型只发工具调用且 content=null 时仍能完成多步执行",
+    "不完整工具参数或中断流不执行任何工具，并保留可诊断错误"
+  ],
+  "errors": [],
+  "earlyEventCount": 5,
+  "deltaCount": 16,
+  "environment": "isolated SQLite + real HTTP SSE fixture, no paid model or production server calls"
+}

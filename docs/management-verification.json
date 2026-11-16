@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "at": "2026-10-27T04:21:29.352Z",
+  "checks": [
+    "远程智能体只需URL，卡片安全新窗口跳转，不调用本地执行器",
+    "智能体新增追加到末尾，上下移动和拖拽排序可保存，刷新仍保持",
+    "远程智能体不能混入本地会话与执行配置",
+    "新增SSH默认首次自动信任，指纹不必手填且有安全说明",
+    "审计日志按真实起止时间查询，自动转UTC，反向区间被明确拦截",
+    "favicon ICO/PNG与应用图标均可访问，手机审计筛选无横向溢出"
+  ],
+  "errors": [],
+  "scope": "isolated account + real browser, remote endpoint mocked, no production credentials or model calls"
+}

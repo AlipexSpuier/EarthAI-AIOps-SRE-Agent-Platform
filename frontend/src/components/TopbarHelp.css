@@ -1,0 +1,10 @@
+.topbar-help-link { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 6px 9px; border-radius: 7px; color: var(--muted-strong); font-size: 11px; font-weight: 500; line-height: 1.4; white-space: nowrap; }
+.topbar-help-link > svg { flex-shrink: 0; color: var(--primary); }
+.topbar-help-link:hover { color: var(--primary); background: var(--primary-soft); }
+.topbar-help-link:focus-visible { outline: none; box-shadow: 0 0 0 3px #379d7915; }
+@media (max-width: 600px) {
+  .topbar-right .topbar-help-link { gap: 5px; padding: 6px; font-size: 11px; }
+  .topbar-left { min-width: 0; }
+  .topbar-left > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar-right { flex: 0 0 auto; }
+}

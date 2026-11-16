@@ -1,0 +1,250 @@
+{
+  "label": "final-readonly",
+  "started_at": "2026-10-24T14:20:39.072546+00:00",
+  "scope": "Paid configured models; configured SSH host; ONLY server_info and uptime; no infrastructure writes",
+  "results": [
+    {
+      "model": "gemini-3.1-pro-preview-all",
+      "episode": 1,
+      "requests": 3,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        },
+        {
+          "name": "ssh_exec",
+          "exit_code": 0,
+          "selected": null,
+          "output_chars": 62
+        }
+      ],
+      "notices": [],
+      "success": true,
+      "protocol": "json",
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 80,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 130,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 93,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        }
+      ],
+      "duration_seconds": 23.34
+    },
+    {
+      "model": "gemini-3.1-pro-preview-all",
+      "episode": 2,
+      "requests": 3,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        },
+        {
+          "name": "ssh_exec",
+          "exit_code": 0,
+          "selected": null,
+          "output_chars": 62
+        }
+      ],
+      "notices": [],
+      "success": true,
+      "protocol": "json",
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 80,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 127,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 112,
+          "tool_count": 0,
+          "reasoning_present": true,
+          "request_attempt": 1
+        }
+      ],
+      "duration_seconds": 22.6
+    },
+    {
+      "model": "gpt-5.6",
+      "episode": 1,
+      "requests": 1,
+      "tools": [],
+      "notices": [
+        {
+          "code": "json_action_required"
+        },
+        {
+          "code": "json_action_required"
+        }
+      ],
+      "success": false,
+      "protocol": "json",
+      "error_code": "text_tool_protocol_error",
+      "diagnostics": {},
+      "error": "模型在两次明确协议请求后仍未返回需要的检查工具；任务未伪判成功",
+      "duration_seconds": 44.99
+    },
+    {
+      "model": "gpt-5.6",
+      "episode": 2,
+      "requests": 1,
+      "tools": [],
+      "notices": [
+        {
+          "code": "json_action_required"
+        },
+        {
+          "code": "json_action_required"
+        }
+      ],
+      "success": false,
+      "protocol": "json",
+      "error_code": "text_tool_protocol_error",
+      "diagnostics": {},
+      "error": "模型在两次明确协议请求后仍未返回需要的检查工具；任务未伪判成功",
+      "duration_seconds": 29.93
+    },
+    {
+      "model": "claude-opus-4-8",
+      "episode": 1,
+      "requests": 3,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        },
+        {
+          "name": "ssh_exec",
+          "exit_code": 0,
+          "selected": null,
+          "output_chars": 62
+        }
+      ],
+      "notices": [],
+      "success": true,
+      "protocol": "json",
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 91,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 122,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 120,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        }
+      ],
+      "duration_seconds": 19.39
+    },
+    {
+      "model": "claude-opus-4-8",
+      "episode": 2,
+      "requests": 3,
+      "tools": [
+        {
+          "name": "server_info",
+          "exit_code": null,
+          "selected": true,
+          "output_chars": 0
+        },
+        {
+          "name": "ssh_exec",
+          "exit_code": 0,
+          "selected": null,
+          "output_chars": 62
+        }
+      ],
+      "notices": [],
+      "success": true,
+      "protocol": "json",
+      "responses": [
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 91,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 129,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        },
+        {
+          "http_status": 200,
+          "finish_reason": "stop",
+          "content_length": 119,
+          "tool_count": 0,
+          "reasoning_present": false,
+          "request_attempt": 1
+        }
+      ],
+      "duration_seconds": 16.78
+    }
+  ],
+  "finished_at": "2026-10-24T14:23:16.107858+00:00",
+  "summary": {
+    "episodes": 6,
+    "succeeded": 4,
+    "model_requests": 14,
+    "verified_ssh_commands": 4
+  }
+}

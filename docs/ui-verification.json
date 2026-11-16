@@ -1,0 +1,346 @@
+{
+  "ok": true,
+  "at": "2026-10-24T15:31:00.924Z",
+  "checks": [
+    "8 种视口 / 100% 缩放：新对话无多余滚动、输入框完整可见",
+    "智能体、项目、服务器与控制菜单紧贴按钮弹出，选后焦点恢复且输入框不跳动",
+    "独立供应商选择、模型范围过滤、搜索、自定义模型、键盘与 Escape，无原生选项框",
+    "全局设置和新对话各一个入口，身份信息不再伪装为菜单",
+    "8 个管理页创建入口唯一，表单选择统一，弹层 Escape 不误关父弹窗",
+    "长文件名、MIME 与移动端知识库目录均不横向滚动",
+    "明暗主题、手机导航正常，浏览器零运行时异常"
+  ],
+  "measured": [
+    {
+      "label": "1920×1080 新对话 / 100%",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "document": [
+        1920,
+        1080
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 1080
+    },
+    {
+      "label": "1440×900 新对话 / 100%",
+      "viewport": [
+        1440,
+        900
+      ],
+      "document": [
+        1440,
+        900
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 900
+    },
+    {
+      "label": "1366×768 新对话 / 100%",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "1280×720 新对话 / 100%",
+      "viewport": [
+        1280,
+        720
+      ],
+      "document": [
+        1280,
+        720
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 720
+    },
+    {
+      "label": "1024×768 新对话 / 100%",
+      "viewport": [
+        1024,
+        768
+      ],
+      "document": [
+        1024,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "820×600 新对话 / 100%",
+      "viewport": [
+        820,
+        600
+      ],
+      "document": [
+        820,
+        600
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 600
+    },
+    {
+      "label": "390×844 新对话 / 100%",
+      "viewport": [
+        390,
+        844
+      ],
+      "document": [
+        390,
+        844
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 844
+    },
+    {
+      "label": "360×640 新对话 / 100%",
+      "viewport": [
+        360,
+        640
+      ],
+      "document": [
+        360,
+        640
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 640
+    },
+    {
+      "label": "servers 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "providers 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "agents 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [
+        {
+          "tag": "MAIN",
+          "class": "route-content ",
+          "x": false,
+          "y": true
+        }
+      ],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "projects 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "knowledge 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "skills 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [
+        {
+          "tag": "MAIN",
+          "class": "route-content ",
+          "x": false,
+          "y": true
+        }
+      ],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "schedules 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "alerts 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "个人空间长文件名 / 桌面",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 768
+    },
+    {
+      "label": "个人空间长文件名 / 手机",
+      "viewport": [
+        390,
+        844
+      ],
+      "document": [
+        390,
+        844
+      ],
+      "routeOverflow": 0,
+      "scrolls": [],
+      "sidebarHeight": 844
+    },
+    {
+      "label": "知识库工作台 / 手机",
+      "viewport": [
+        390,
+        844
+      ],
+      "document": [
+        390,
+        844
+      ],
+      "routeOverflow": 0,
+      "scrolls": [
+        {
+          "tag": "MAIN",
+          "class": "route-content ",
+          "x": false,
+          "y": true
+        }
+      ],
+      "sidebarHeight": 844
+    },
+    {
+      "label": "手机智能体菜单",
+      "viewport": [
+        390,
+        844
+      ],
+      "document": [
+        390,
+        844
+      ],
+      "routeOverflow": 0,
+      "scrolls": [
+        {
+          "tag": "DIV",
+          "class": "ea-select-options",
+          "x": false,
+          "y": true
+        }
+      ],
+      "sidebarHeight": 844
+    },
+    {
+      "label": "精简概览",
+      "viewport": [
+        1366,
+        768
+      ],
+      "document": [
+        1366,
+        768
+      ],
+      "routeOverflow": 0,
+      "scrolls": [
+        {
+          "tag": "MAIN",
+          "class": "route-content ",
+          "x": false,
+          "y": true
+        }
+      ],
+      "sidebarHeight": 768
+    }
+  ],
+  "errors": [],
+  "scope": "isolated database, headless Chromium at CSS zoom 100%, no user credentials or infrastructure commands"
+}

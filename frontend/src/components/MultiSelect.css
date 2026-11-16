@@ -1,0 +1,21 @@
+.multi-select.ea-multi-select { min-inline-size: 0; }
+.ea-admin-dialog .multi-select.ea-multi-select { max-height: none; overflow: visible; }
+.ea-multi-select .multi-select-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; margin-bottom: 10px; }
+.ea-multi-select .multi-select-count { min-width: 0; color: var(--muted-strong); font-size: 11px; line-height: 1.7; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.ea-multi-select .multi-select-unavailable-count { display: block; font-size: 10px; }
+.ea-multi-select .multi-select-actions { display: flex; gap: 6px; margin-left: auto; flex-shrink: 0; }
+.ea-multi-select .multi-select-actions .button { min-height: 32px; padding: 5px 10px; }
+.ea-multi-select .multi-select-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 6px; max-height: 220px; overflow-y: auto; overflow-x: hidden; overscroll-behavior: contain; scrollbar-gutter: stable; min-width: 0; padding: 3px; margin: 0 -3px; }
+.ea-multi-select .multi-select-option { min-width: 0; min-height: 34px; padding: 6px 9px; align-items: flex-start; gap: 8px; font-size: 11px; line-height: 1.7; }
+.ea-multi-select .multi-select-option > input { flex: 0 0 auto; width: 15px; height: 15px; margin: 2px 0 0; }
+.ea-multi-select .multi-select-option > span { min-width: 0; overflow-wrap: anywhere; }
+.ea-multi-select .multi-select-option:has(input:disabled) { color: var(--muted-strong); cursor: not-allowed; opacity: .7; }
+.ea-multi-select .multi-select-unavailable { display: inline-block; margin-left: 6px; color: var(--muted-strong); font-size: 10px; }
+.ea-multi-select :is(button, input):focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 560px) {
+  .multi-select.ea-multi-select { padding: 10px; }
+  .ea-multi-select .multi-select-toolbar { gap: 6px 10px; }
+  .ea-multi-select .multi-select-list { grid-template-columns: minmax(0, 1fr); max-height: 200px; }
+  .ea-multi-select .multi-select-option { min-height: 38px; }
+  .ea-multi-select .multi-select-actions .button { min-height: 36px; }
+}

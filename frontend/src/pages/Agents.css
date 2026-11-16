@@ -1,0 +1,202 @@
+.ea-agents-page .ea-agent-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.ea-agents-page .ea-agent-kind,
+.ea-agent-order .ea-agent-kind {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--primary);
+  background: var(--primary-soft);
+  font-size: 10px;
+  line-height: 1.7;
+  white-space: nowrap;
+}
+
+.ea-agents-page .ea-agent-kind-remote,
+.ea-agent-order .ea-agent-kind-remote {
+  color: var(--blue);
+  background: var(--blue-soft);
+}
+
+.ea-agents-page .ea-agent-remote-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+  margin-top: 17px;
+  color: var(--muted-strong);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.ea-agents-page .ea-agent-remote-address > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ea-agents-page .ea-agent-remote-note {
+  margin-top: 13px;
+  color: var(--primary-muted);
+  font-size: 9px;
+}
+
+.ea-agent-form,
+.ea-agent-form .ea-agent-local-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  min-width: 0;
+}
+
+.ea-agent-order .ea-agent-order-body {
+  padding: 20px 25px;
+}
+
+.ea-agent-order .ea-agent-order-hint {
+  margin-bottom: 14px;
+  color: var(--muted-strong);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.ea-agent-order .ea-agent-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ea-agent-order .ea-agent-order-row {
+  display: grid;
+  grid-template-columns: 18px 22px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  transition: border-color .15s, background .15s, opacity .15s;
+}
+
+.ea-agent-order .ea-agent-order-row[draggable='true'] {
+  cursor: grab;
+}
+
+.ea-agent-order .ea-agent-order-row[data-dragging='true'] {
+  opacity: .45;
+  cursor: grabbing;
+}
+
+.ea-agent-order .ea-agent-order-row[data-drop-target='true'] {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+
+.ea-agent-order .ea-agent-order-grip {
+  display: flex;
+  color: var(--muted);
+}
+
+.ea-agent-order .ea-agent-order-number {
+  color: var(--muted-strong);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.ea-agent-order .ea-agent-order-name {
+  min-width: 0;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+
+.ea-agent-order .ea-agent-order-controls {
+  display: flex;
+  gap: 4px;
+}
+
+.ea-agent-order .ea-agent-order-controls > .icon-button {
+  width: 34px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface-soft);
+}
+
+.ea-agent-order .ea-agent-order-controls > .icon-button:disabled {
+  opacity: .35;
+}
+
+.ea-agent-order .ea-agent-order-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.ea-agent-order .ea-agent-order-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .ea-agents-page .header-actions {
+    flex-wrap: wrap;
+  }
+
+  .ea-agent-order .ea-agent-order-body {
+    padding: 18px 14px;
+  }
+
+  .ea-agent-order .ea-agent-order-row {
+    grid-template-columns: 16px 18px minmax(0, 1fr) auto;
+    gap: 5px 7px;
+    padding: 9px 7px;
+  }
+
+  .ea-agent-order .ea-agent-order-grip,
+  .ea-agent-order .ea-agent-order-number {
+    grid-row: 1 / 3;
+  }
+
+  .ea-agent-order .ea-agent-order-name {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .ea-agent-order .ea-agent-kind {
+    grid-column: 3;
+    grid-row: 2;
+    justify-self: start;
+    font-size: 9px;
+    padding: 1px 6px;
+  }
+
+  .ea-agent-order .ea-agent-order-controls {
+    grid-column: 4;
+    grid-row: 1 / 3;
+  }
+
+  .ea-agent-order .ea-agent-order-controls > .icon-button {
+    width: 40px;
+    height: 44px;
+  }
+}

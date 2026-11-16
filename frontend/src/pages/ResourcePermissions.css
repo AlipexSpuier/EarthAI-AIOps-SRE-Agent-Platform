@@ -1,0 +1,130 @@
+.ea-resource-read-only,
+.ea-resource-origin {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  color: var(--muted-strong);
+  background: var(--surface-soft);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.ea-resource-origin {
+  min-width: 0;
+  color: var(--primary);
+  background: var(--primary-soft);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.ea-resource-usage {
+  color: var(--muted-strong);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.8;
+}
+
+.agent-card > .ea-resource-usage {
+  margin-top: 12px;
+}
+
+.ea-resource-personal-note {
+  min-width: 0;
+  margin-bottom: 18px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted-strong);
+  background: var(--surface-soft);
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.ea-resource-fixed-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted-strong);
+  background: var(--surface-soft);
+  font-size: 12px;
+}
+
+.ea-resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ea-resource-state {
+  flex-shrink: 0;
+  color: var(--muted-strong);
+  font-size: 11px;
+}
+
+.ea-resource-details,
+.ea-resource-document {
+  min-width: 0;
+  padding: 20px 26px;
+  overflow-wrap: anywhere;
+}
+
+.ea-resource-details dl {
+  margin: 14px 0 0;
+}
+
+.ea-resource-details dl > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 130px) minmax(0, 1fr);
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.ea-resource-details dl > div:last-child {
+  border-bottom: 0;
+}
+
+.ea-resource-details dt {
+  color: var(--muted-strong);
+  font-size: 12px;
+}
+
+.ea-resource-details dd {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink);
+  white-space: pre-wrap;
+}
+
+.ea-resource-document .rich-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 560px) {
+  .ea-resource-details,
+  .ea-resource-document {
+    padding: 16px;
+  }
+
+  .ea-resource-details dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+}
+
+.provider-card > .provider-card-heading + .ea-resource-read-only {
+  margin-top: 10px;
+}

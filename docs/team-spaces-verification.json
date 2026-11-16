@@ -1,0 +1,891 @@
+{
+  "ok": true,
+  "at": "2026-10-29T04:10:14.416Z",
+  "checks": [
+    "管理端真实创建账户默认 personal；新增支持双模块多选；批量默认保留各自模块，独立开关批量开放不改变控制授权",
+    "用户通过真实表单创建团队并成为唯一 owner；准确邮箱邀请 viewer/editor/manager，personal-only 账户自动并集开启 team",
+    "viewer 可查看成员、文件并通过真实下载按钮读取原 bytes；写入按钮不存在、隐藏上传输入禁用、未发出浏览器写请求，四类文件写 API 均 403",
+    "editor 通过真实文件选择、重命名表单、替换表单和永久删除确认完成 CRUD；重命名/替换保留文件 ID；个人文件也通过真实上传入口建立",
+    "manager 真实编辑空间并往返调整 viewer/editor；角色选择只列两种，owner/自己/同级 manager 无操作；提权 manager/owner 和转交均被 API 拒绝",
+    "管理端真实关闭两个模块后旧会话接口均 403、路由无数据请求且入口隐藏；普通与全局管理员邀请不能绕过；重新开放后个人/团队原 ID、名称、bytes 与成员角色均保留",
+    "真实归档不请求 files，仍能显示恢复按钮；13 项归档写操作（含用户/管理员 transfer 和两种 leave）须先恢复；owner 无离开入口且不可删除/升级；恢复后原文件可读",
+    "所有者通过真实成员移除确认撤权；viewer 焦点刷新清除旧文件和操作，已知空间/文件 ID 均 404，其他成员原 bytes 不变",
+    "管理员无成员身份且模块全关闭仍可看到全局团队，并真实创建指定普通 owner、编辑、上传、授 manager、转交、归档、恢复与删除文件；普通用户接口仍 403",
+    "1366×900 与 390×844 用户端和管理端文档/route/目录/详情无横向越界；真实鼠标滚轮分别滚动目录与详情，不带动另一面板或页面；成员页及模块编辑弹窗宽度通过",
+    "所有者真实转交后原 owner 立即降为 manager，可真实离开且账户可删除；唯一新 owner、共享原文件 bytes 与他人个人文件均保留",
+    "console/pageerror/非预期 HTTP/请求失败/浏览器外联/后端外联与模型或工具调用全部为零；预期 403/404/409/422 独立记录且不掩盖异常"
+  ],
+  "layouts": [
+    {
+      "actor": "manager",
+      "label": "team files workbench",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "document": 1366,
+      "body": 1366,
+      "route": {
+        "width": 1130,
+        "scrollWidth": 1130
+      },
+      "dialog": [],
+      "panels": {
+        ".ea-team-list-scroll": {
+          "clientWidth": 302,
+          "scrollWidth": 302,
+          "clientHeight": 490,
+          "scrollHeight": 1887,
+          "overflowY": "auto"
+        },
+        ".ea-team-detail": {
+          "clientWidth": 734,
+          "scrollWidth": 734,
+          "clientHeight": 628,
+          "scrollHeight": 1256,
+          "overflowY": "auto"
+        }
+      },
+      "wheel": {
+        "beforeDirectory": {
+          "directory": 0,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDirectory": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "beforeDetail": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDetail": {
+          "directory": 350,
+          "detail": 420,
+          "route": 0,
+          "document": 0
+        }
+      }
+    },
+    {
+      "actor": "manager",
+      "label": "team members",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "document": 1366,
+      "body": 1366,
+      "route": {
+        "width": 1130,
+        "scrollWidth": 1130
+      },
+      "dialog": []
+    },
+    {
+      "actor": "admin",
+      "label": "team files workbench",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "document": 1366,
+      "body": 1366,
+      "route": {
+        "width": 1130,
+        "scrollWidth": 1130
+      },
+      "dialog": [],
+      "panels": {
+        ".ea-team-list-scroll": {
+          "clientWidth": 302,
+          "scrollWidth": 302,
+          "clientHeight": 490,
+          "scrollHeight": 1887,
+          "overflowY": "auto"
+        },
+        ".ea-team-detail": {
+          "clientWidth": 734,
+          "scrollWidth": 734,
+          "clientHeight": 628,
+          "scrollHeight": 1256,
+          "overflowY": "auto"
+        }
+      },
+      "wheel": {
+        "beforeDirectory": {
+          "directory": 0,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDirectory": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "beforeDetail": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDetail": {
+          "directory": 350,
+          "detail": 420,
+          "route": 0,
+          "document": 0
+        }
+      }
+    },
+    {
+      "actor": "admin",
+      "label": "team members",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "document": 1366,
+      "body": 1366,
+      "route": {
+        "width": 1130,
+        "scrollWidth": 1130
+      },
+      "dialog": []
+    },
+    {
+      "actor": "admin",
+      "label": "account module edit dialog",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "document": 1366,
+      "body": 1366,
+      "route": {
+        "width": 1130,
+        "scrollWidth": 1130
+      },
+      "dialog": [
+        {
+          "width": 738,
+          "scrollWidth": 738,
+          "left": 313,
+          "right": 1053
+        }
+      ]
+    },
+    {
+      "actor": "manager",
+      "label": "team files workbench",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": 390,
+      "body": 390,
+      "route": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "dialog": [],
+      "panels": {
+        ".ea-team-list-scroll": {
+          "clientWidth": 349,
+          "scrollWidth": 349,
+          "clientHeight": 116,
+          "scrollHeight": 1275,
+          "overflowY": "auto"
+        },
+        ".ea-team-detail": {
+          "clientWidth": 349,
+          "scrollWidth": 349,
+          "clientHeight": 589,
+          "scrollHeight": 1713,
+          "overflowY": "auto"
+        }
+      },
+      "wheel": {
+        "beforeDirectory": {
+          "directory": 0,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDirectory": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "beforeDetail": {
+          "directory": 350,
+          "detail": 0,
+          "route": 289,
+          "document": 0
+        },
+        "afterDetail": {
+          "directory": 350,
+          "detail": 420,
+          "route": 289,
+          "document": 0
+        }
+      }
+    },
+    {
+      "actor": "manager",
+      "label": "team members",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": 390,
+      "body": 390,
+      "route": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "dialog": []
+    },
+    {
+      "actor": "admin",
+      "label": "team files workbench",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": 390,
+      "body": 390,
+      "route": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "dialog": [],
+      "panels": {
+        ".ea-team-list-scroll": {
+          "clientWidth": 349,
+          "scrollWidth": 349,
+          "clientHeight": 116,
+          "scrollHeight": 1275,
+          "overflowY": "auto"
+        },
+        ".ea-team-detail": {
+          "clientWidth": 349,
+          "scrollWidth": 349,
+          "clientHeight": 589,
+          "scrollHeight": 1713,
+          "overflowY": "auto"
+        }
+      },
+      "wheel": {
+        "beforeDirectory": {
+          "directory": 0,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "afterDirectory": {
+          "directory": 350,
+          "detail": 0,
+          "route": 0,
+          "document": 0
+        },
+        "beforeDetail": {
+          "directory": 350,
+          "detail": 0,
+          "route": 289,
+          "document": 0
+        },
+        "afterDetail": {
+          "directory": 350,
+          "detail": 420,
+          "route": 289,
+          "document": 0
+        }
+      }
+    },
+    {
+      "actor": "admin",
+      "label": "team members",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": 390,
+      "body": 390,
+      "route": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "dialog": []
+    },
+    {
+      "actor": "admin",
+      "label": "account module edit dialog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": 390,
+      "body": 390,
+      "route": {
+        "width": 390,
+        "scrollWidth": 390
+      },
+      "dialog": [
+        {
+          "width": 364,
+          "scrollWidth": 364,
+          "left": 12,
+          "right": 378
+        }
+      ]
+    }
+  ],
+  "negativeAssertions": [
+    {
+      "actor": "viewer",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files",
+      "status": 403,
+      "reason": "viewer file write denied",
+      "detail": "没有执行此团队操作的权限"
+    },
+    {
+      "actor": "viewer",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8",
+      "status": 403,
+      "reason": "viewer file write denied",
+      "detail": "没有执行此团队操作的权限"
+    },
+    {
+      "actor": "viewer",
+      "method": "PUT",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8/content",
+      "status": 403,
+      "reason": "viewer file write denied",
+      "detail": "没有执行此团队操作的权限"
+    },
+    {
+      "actor": "viewer",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8",
+      "status": 403,
+      "reason": "viewer file write denied",
+      "detail": "没有执行此团队操作的权限"
+    },
+    {
+      "actor": "editor",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/5df7c002-7af3-4ca3-9e8f-3042cb2c4aa0/download",
+      "status": 404,
+      "reason": "UI-deleted scratch file no longer downloads",
+      "detail": "团队文件不存在"
+    },
+    {
+      "actor": "manager",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members",
+      "status": 403,
+      "reason": "manager cannot grant peer manager",
+      "detail": "仅所有者或平台管理员可授予管理者角色"
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/530ed773-9304-4760-9442-6945353cfa10",
+      "status": 403,
+      "reason": "manager cannot promote editor to manager",
+      "detail": "管理者只能管理编辑者和查看者，不能管理或授予管理者"
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "status": 409,
+      "reason": "manager cannot demote owner",
+      "detail": "不能降级空间所有者，请先转交所有权"
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/530ed773-9304-4760-9442-6945353cfa10",
+      "status": 422,
+      "reason": "owner role is not a member-role grant",
+      "detail": "成员角色必须为 viewer、editor 或 manager"
+    },
+    {
+      "actor": "manager",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/transfer",
+      "status": 403,
+      "reason": "manager cannot transfer ownership",
+      "detail": "没有执行此团队操作的权限"
+    },
+    {
+      "actor": "editor",
+      "method": "GET",
+      "endpoint": "/files",
+      "status": 403,
+      "reason": "explicitly disabled module rejects old session",
+      "detail": "管理员未启用此空间，请联系管理员"
+    },
+    {
+      "actor": "editor",
+      "method": "GET",
+      "endpoint": "/files/6515dd37-52d3-435c-9552-acdaa69aa991/download",
+      "status": 403,
+      "reason": "explicitly disabled module rejects old session",
+      "detail": "管理员未启用此空间，请联系管理员"
+    },
+    {
+      "actor": "editor",
+      "method": "GET",
+      "endpoint": "/team-spaces",
+      "status": 403,
+      "reason": "explicitly disabled module rejects old session",
+      "detail": "管理员未启用此空间，请联系管理员"
+    },
+    {
+      "actor": "editor",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8/download",
+      "status": 403,
+      "reason": "explicitly disabled module rejects old session",
+      "detail": "管理员未启用此空间，请联系管理员"
+    },
+    {
+      "actor": "admin",
+      "method": "POST",
+      "endpoint": "/admin/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "status": 409,
+      "reason": "global administrator invitation also respects explicit module closure",
+      "detail": "目标账号的团队入口已被平台关闭，请联系平台管理员重新开启"
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/leave",
+      "status": 409,
+      "reason": "owner cannot leave before transfer",
+      "detail": "所有者不能被移除或退出，请先转交所有权"
+    },
+    {
+      "actor": "owner",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/6b723d33-6353-4314-9062-8b33a07b7e29",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/6b723d33-6353-4314-9062-8b33a07b7e29",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "PUT",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8/content",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/transfer",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "editor",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/leave",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "editor",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/530ed773-9304-4760-9442-6945353cfa10",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "admin",
+      "method": "POST",
+      "endpoint": "/admin/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/transfer",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "admin",
+      "method": "PATCH",
+      "endpoint": "/admin/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "status": 409,
+      "reason": "archived operation requires restore",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "viewer",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8/download",
+      "status": 409,
+      "reason": "archived file downloads paused",
+      "detail": "团队空间已归档，请先恢复"
+    },
+    {
+      "actor": "admin",
+      "method": "PATCH",
+      "endpoint": "/admin/users/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "status": 409,
+      "reason": "archived team owner cannot be promoted to platform admin",
+      "detail": "所选账号仍拥有团队空间（包括已归档空间），请先转交所有权"
+    },
+    {
+      "actor": "viewer",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "status": 404,
+      "reason": "removed member cannot read known team or file ID",
+      "detail": "团队空间不存在或没有权限"
+    },
+    {
+      "actor": "viewer",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files",
+      "status": 404,
+      "reason": "removed member cannot read known team or file ID",
+      "detail": "团队空间不存在或没有权限"
+    },
+    {
+      "actor": "viewer",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/387b2bcb-a526-444d-9a48-e9c823f98bb8/download",
+      "status": 404,
+      "reason": "removed member cannot read known team or file ID",
+      "detail": "团队空间不存在或没有权限"
+    },
+    {
+      "actor": "admin",
+      "method": "GET",
+      "endpoint": "/team-spaces",
+      "status": 403,
+      "reason": "administrator remains forbidden from ordinary user team route",
+      "detail": "管理员仅能访问管理后台"
+    }
+  ],
+  "console": [
+    {
+      "actor": "manager",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",
+      "url": "http://127.0.0.1:39011/api/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "lineNumber": 0,
+      "columnNumber": 0
+    },
+    {
+      "actor": "admin",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",
+      "url": "http://127.0.0.1:39011/api/admin/users/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "lineNumber": 0,
+      "columnNumber": 0
+    },
+    {
+      "actor": "viewer",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "url": "http://127.0.0.1:39011/api/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "lineNumber": 0,
+      "columnNumber": 0
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "unexpectedHttp": [],
+  "requestFailures": [],
+  "expectedHttp": [
+    {
+      "actor": "manager",
+      "method": "POST",
+      "endpoint": "/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "status": 409,
+      "reason": "administrator-closed team cannot be re-enabled by invitation"
+    },
+    {
+      "actor": "admin",
+      "method": "DELETE",
+      "endpoint": "/admin/users/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "status": 409,
+      "reason": "archived team owner cannot be deleted before ownership transfer"
+    },
+    {
+      "actor": "viewer",
+      "method": "GET",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "status": 404,
+      "reason": "removed member refresh must clear stale team data"
+    }
+  ],
+  "expectedConsole": [
+    {
+      "actor": "manager",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",
+      "url": "http://127.0.0.1:39011/api/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "lineNumber": 0,
+      "columnNumber": 0,
+      "reason": "administrator-closed team cannot be re-enabled by invitation"
+    },
+    {
+      "actor": "admin",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 409 (Conflict)",
+      "url": "http://127.0.0.1:39011/api/admin/users/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "lineNumber": 0,
+      "columnNumber": 0,
+      "reason": "archived team owner cannot be deleted before ownership transfer"
+    },
+    {
+      "actor": "viewer",
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "url": "http://127.0.0.1:39011/api/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "lineNumber": 0,
+      "columnNumber": 0,
+      "reason": "removed member refresh must clear stale team data"
+    }
+  ],
+  "expectedCancellations": [
+    {
+      "actor": "editor",
+      "method": "PUT",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/5df7c002-7af3-4ca3-9e8f-3042cb2c4aa0/content",
+      "error": "net::ERR_ABORTED",
+      "reason": "successful PUT body not consumed by UI; fixture verified bytes before controlled navigation"
+    }
+  ],
+  "browserWrites": [
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces",
+      "isApi": true,
+      "at": 1793247023269
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members",
+      "isApi": true,
+      "at": 1793247023902
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members",
+      "isApi": true,
+      "at": 1793247024696
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members",
+      "isApi": true,
+      "at": 1793247025529
+    },
+    {
+      "actor": "editor",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files",
+      "isApi": true,
+      "at": 1793247027824
+    },
+    {
+      "actor": "editor",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/5df7c002-7af3-4ca3-9e8f-3042cb2c4aa0",
+      "isApi": true,
+      "at": 1793247028318
+    },
+    {
+      "actor": "editor",
+      "method": "PUT",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/5df7c002-7af3-4ca3-9e8f-3042cb2c4aa0/content",
+      "isApi": true,
+      "at": 1793247028506
+    },
+    {
+      "actor": "editor",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/files/5df7c002-7af3-4ca3-9e8f-3042cb2c4aa0",
+      "isApi": true,
+      "at": 1793247028998
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "isApi": true,
+      "at": 1793247031573
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/6b723d33-6353-4314-9062-8b33a07b7e29",
+      "isApi": true,
+      "at": 1793247032876
+    },
+    {
+      "actor": "manager",
+      "method": "PATCH",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/6b723d33-6353-4314-9062-8b33a07b7e29",
+      "isApi": true,
+      "at": 1793247033601
+    },
+    {
+      "actor": "manager",
+      "method": "POST",
+      "endpoint": "/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "isApi": true,
+      "at": 1793247038914
+    },
+    {
+      "actor": "manager",
+      "method": "POST",
+      "endpoint": "/team-spaces/08d739c5-6712-4223-95e2-3d6c6d428640/members",
+      "isApi": true,
+      "at": 1793247043028
+    },
+    {
+      "actor": "owner",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd",
+      "isApi": true,
+      "at": 1793247044415
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/restore",
+      "isApi": true,
+      "at": 1793247046997
+    },
+    {
+      "actor": "owner",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/6b723d33-6353-4314-9062-8b33a07b7e29",
+      "isApi": true,
+      "at": 1793247048448
+    },
+    {
+      "actor": "owner",
+      "method": "POST",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/transfer",
+      "isApi": true,
+      "at": 1793247062380
+    },
+    {
+      "actor": "owner",
+      "method": "DELETE",
+      "endpoint": "/team-spaces/3cadc277-f6fa-4a57-a9e5-0ee5b59583fd/members/5b25b7bc-5b4b-44ce-8208-f323dfbdb360",
+      "isApi": true,
+      "at": 1793247062790
+    }
+  ],
+  "backendBlockedOperations": [],
+  "scope": "real headless Chromium; temporary local data; dedicated 0.0.0.0 server; no paid model, production, SSH or NAS access",
+  "frontend": {
+    "asset": "/assets/index-BiXNeTAL.js",
+    "modifiedAt": "2026-10-29T03:59:15.486Z"
+  },
+  "isolation": {
+    "bind": "0.0.0.0",
+    "port": 39011,
+    "temporaryData": true,
+    "backendEgressDenied": true,
+    "schedulerDisabled": true
+  },
+  "browser": {
+    "name": "Chromium",
+    "version": "134.0.6998.35",
+    "headless": true
+  },
+  "preservation": {
+    "personal": {
+      "id": "6515dd37-52d3-435c-9552-acdaa69aa991",
+      "bytes": 62,
+      "identical": true
+    },
+    "team": {
+      "id": "387b2bcb-a526-444d-9a48-e9c823f98bb8",
+      "bytes": 85,
+      "identical": true
+    },
+    "membershipRole": "editor"
+  },
+  "unexpectedConsole": [],
+  "stage": "telemetry and isolation assertions",
+  "cleanup": {
+    "browserClosed": true,
+    "serverStopped": true,
+    "temporaryDataRemoved": true
+  }
+}

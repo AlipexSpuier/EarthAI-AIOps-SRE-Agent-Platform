@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "native",
+    "tool_count": 0,
+    "public_control_response": "{\"action\":\"tool\",\"name\":\"server_info\",\"arguments\":{}}"
+  },
+  {
+    "mode": "json_protocol",
+    "tool_count": 0,
+    "public_control_response": "{\"action\":\"tool\",\"name\":\"server_info\",\"arguments\":{}}"
+  }
+]
